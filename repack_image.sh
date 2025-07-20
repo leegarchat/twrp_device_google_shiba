@@ -23,3 +23,11 @@ magiskboot cpio vendor_ramdisk/$name_ramdisk.cpio \
 magiskboot repack ../OrangeFox-R11.3-Unofficial-shiba.img
 cp -f new-boot.img ../OrangeFox-R11.3-Unofficial-shiba.img
 
+DATE=$(date +"%Y-%d-%m")
+
+if [ "$1" == "move" ] ; then
+    cp new-boot.img $MAIN_PATH/releases/OrangeFox-R11.3-Unofficial-shiba-$DATE.img
+fi
+
+cd $MAIN_PATH
+rm -rf $FOX_PATH/out/target/product/shiba/repack_boot
