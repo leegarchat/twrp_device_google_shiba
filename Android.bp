@@ -1,0 +1,17 @@
+//
+// Copyright (C) 2024 The Android Open Source Project
+// Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+soong_namespace {
+	imports: [
+		"device/google/shiba/pixel-source/conf",
+		"device/google/shiba/pixel-source/bootctrl/1.2",
+		// "device/google/shiba/pixel-source/bootctrl/aidl",
+		// "device/google/shiba/pixel-source/device_zuma/usb/usb",
+		// "device/google/shiba/pixel-source/hardware_google_pixel/pixelstats",
+		// "device/google/shiba/pixel-source/hardware_google_pixel/usb",
+	],
+}
