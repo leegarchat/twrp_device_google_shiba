@@ -3,7 +3,7 @@
 SCRIPT_PATH="$(readlink -f "$0")"
 MAIN_PATH=$(dirname $SCRIPT_PATH)
 FOX_PATH=$(readlink -f "$MAIN_PATH/../../..")
-device="$(dirname $MAIN_PATH)"
+device="$(basename $MAIN_PATH)"
 
 cd $FOX_PATH/out/target/product/$device/
 mkdir repack_boot
