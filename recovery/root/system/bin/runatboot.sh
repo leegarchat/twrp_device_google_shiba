@@ -181,7 +181,7 @@ modules_touch_install(){
 
     if mount -r /dev/block/mapper/vendor_dlkm$suffix /dev/modules_inject/vendor_dlkm$suffix ; then 
         for module in $modules_touch ; do
-            files_finded=$(find /dev/modules_inject/vendor_dlkm$suffix /modules_touch | grep "${module}.ko" )
+            files_finded=$(find /dev/modules_inject/vendor_dlkm$suffix /system/modules_touch | grep "${module}.ko" )
             for f in $files_finded; do
                 insmod $f;
                 if [ $? -eq 0 ]; then
@@ -195,7 +195,7 @@ modules_touch_install(){
         if lptools_new --slot $unslot --suffix $unsuffix --map vendor_dlkm$unsuffix ; then
             if mount -r /dev/block/mapper/vendor_dlkm$unsuffix /dev/modules_inject/vendor_dlkm$unsuffix ; then
                 for module in $modules_touch ; do
-                    files_finded=$(find /dev/modules_inject/vendor_dlkm$unsuffix /modules_touch | grep "${module}.ko" )
+                    files_finded=$(find /dev/modules_inject/vendor_dlkm$unsuffix /system/modules_touch | grep "${module}.ko" )
                     for f in $files_finded; do
                         insmod $f;
                         if [ $? -eq 0 ]; then
