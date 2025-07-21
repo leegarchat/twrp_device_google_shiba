@@ -49,4 +49,12 @@ Please refer to the [Releases ](https://github.com/leegarchat/twrp_device_google
 
 ---
 
+## Photos
+
+![1753057968120](image/README/1753057968120.png)
+
+![1753057974143](image/README/1753057974143.png)
+
+---
+
 *If you encounter any other issues or have feature requests, feel free to open an issue or contact the maintainer.*
