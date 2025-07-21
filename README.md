@@ -1,4 +1,3 @@
-
 **OrangeFox Recovery for Pixel 8 (shiba)**
 
 **Maintainer:** LeeGarChat
@@ -26,7 +25,6 @@
 
 1. **/data (userdata) decryption** : Currently not supported and likely not fixable in this build. For data access, use **DFE** (included in this build).
 2. **USB Host / OTG** : Hardware limitation. Requires a DTB overlay in `dtbo`, which cannot be loaded. Modifying the DTB causes a bootloop. Using Pixel libraries does not resolve this issue, as it’s tied to DTB configuration.
-3. 
 
 ### Minor
 
