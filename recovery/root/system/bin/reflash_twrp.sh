@@ -41,7 +41,8 @@ else
     fi
 fi
 cd /
-
+umount -fl /vendor
+umount -fl /system_root
 cat /ramdisk-files.txt | cpio -H newc -o > $folder/vendor_ramdisk/recovery.cpio
 cat /first_stage-ramdisk-files.txt | cpio -H newc -o > $folder/vendor_ramdisk/ramdisk.cpio
 cd $folder
