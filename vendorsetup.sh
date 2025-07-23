@@ -114,7 +114,6 @@ export FOX_USE_SPECIFIC_MAGISK_ZIP="$fox_dir/device/google/shiba/root/system/bin
 
 export FOX_VERSION=""
 # Нужно задать пустым в свеэих исходниках FOX
-
 source $fox_dir/device/google/shiba/ofox_vars.sh
 s=""
 for f in $(env | grep -E '^(OF_|FOX_)') ; do 

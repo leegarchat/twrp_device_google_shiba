@@ -200,14 +200,14 @@ export FOX_RECOVERY_VENDOR_BOOT_PARTITION="/dev/block/platform/13200000.ufs/by-n
 # export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
 # - set to 1 to use magiskboot for all patching of boot images *and* recovery images
 
-export FOX_PATCH_VBMETA_FLAG=1
+# export FOX_PATCH_VBMETA_FLAG=1
 # - Set to 1 to instruct magiskboot v24+ to always patch the vbmeta header when patching the recovery/boot image
 # - It should not be necessary to use this variable under normal circumstances
 # - Do *NOT* use this variable unless you are sure of what you are doing (and only if you are getting bootloops after flashing OrangeFox or Magisk or after changing the splash image)
 # - This is *experimental* and should be considered as work-in-progress. You should test your builds thoroughly to make sure that everything works as expected
 # - default = 0
 
-export FOX_USE_BASH_SHELL=1
+# export FOX_USE_BASH_SHELL=1
 # - set this to 1 if you want bash to be the default shell, instead of "sh"
 # - default = 0
 # - if not set, bash will still be copied, but it will not replace "sh"
@@ -334,7 +334,7 @@ export FOX_BASH_TO_SYSTEM_BIN=1
 # - disable changing the splash screen with "OF_NO_SPLASH_CHANGE".
 # - default = 0
 
-export FOX_BUILD_BASH=1
+# export FOX_BUILD_BASH=1
 # - set this to 1 to build bash from source during the build process; this will replace the standard OrangeFox bash binary
 # - this might require cloning the bash sources from upstream (or updating them if the current version generates build errors)
 # - use this with caution; in particular, your shell scripts should use "/system/bin/sh", instead of "/sbin/sh", in the shebang
