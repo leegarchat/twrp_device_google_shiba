@@ -275,8 +275,8 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 # запрещает использовать драйверы некоторых сенсорных экранов (скорее всего, «heatbeam touch panel»). 
 # Иногда требуется исключить нестандартные устройства ввода, вызывающие проблемы.
 
-TW_LOAD_VENDOR_MODULES := "heatmap.ko touch_offload.ko ftm5.ko sec_touch.ko goodix_brl_touch.ko goog_touch_interface.ko"
-TW_LOAD_VENDOR_DLKM_MODULES := "heatmap.ko touch_offload.ko ftm5.ko sec_touch.ko goodix_brl_touch.ko goog_touch_interface.ko"
+# TW_LOAD_VENDOR_MODULES := "heatmap.ko touch_offload.ko ftm5.ko sec_touch.ko goodix_brl_touch.ko goog_touch_interface.ko"
+# TW_LOAD_VENDOR_DLKM_MODULES := "heatmap.ko touch_offload.ko ftm5.ko sec_touch.ko goodix_brl_touch.ko goog_touch_interface.ko"
 # перечисление файлов модулей ядра, которые должны быть загружены рекавери. Здесь указаны .ko файлы сенсорных драйверов (heatmap, goodix и т.д.). 
 # Без них сенсор может не работать в OrangeFox, поэтому их явно загружают.
 
