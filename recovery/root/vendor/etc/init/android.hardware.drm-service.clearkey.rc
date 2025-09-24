@@ -1,0 +1,10 @@
+
+
+service vendor.drm-clearkey-service /vendor/bin/hw/android.hardware.drm-service.clearkey
+    class hal
+    user root
+    group root mediadrm drmrpc
+    ioprio rt 4
+    task_profiles ProcessCapacityHigh
+    interface aidl android.hardware.drm.IDrmFactory/clearkey
+    seclabel u:r:recovery:s0

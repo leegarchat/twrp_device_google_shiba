@@ -1,0 +1,12 @@
+
+
+
+on property:vendor.all.modules.ready=1
+   enable vendor.citadeld
+
+service vendor.citadeld /vendor/bin/hw/citadeld
+    class early_hal
+    user root
+    group root hsm
+    seclabel u:r:recovery:s0
+    disabled

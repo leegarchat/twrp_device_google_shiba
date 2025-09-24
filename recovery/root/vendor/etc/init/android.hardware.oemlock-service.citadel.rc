@@ -1,0 +1,8 @@
+
+
+
+service vendor.oemlock_hal_aidl /vendor/bin/hw/android.hardware.oemlock-service.citadel
+    class hal
+    user root
+    group root hsm
+    seclabel u:r:recovery:s0

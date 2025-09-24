@@ -1,0 +1,12 @@
+
+
+service vendor.keymint.rust-trusty /vendor/bin/hw/android.hardware.security.keymint-service.rust.trusty
+    class early_hal
+    user root
+    group root drmrpc
+    # The keymint service is not allowed to restart.
+    # If it crashes, a device restart is required.
+    oneshot
+    seclabel u:r:recovery:s0
+
+

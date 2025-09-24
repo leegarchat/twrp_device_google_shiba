@@ -54,6 +54,11 @@ PRODUCT_PACKAGES += update_engine
 PRODUCT_PACKAGES += update_engine_sideload
 PRODUCT_PACKAGES += update_verifier
 
+PRODUCT_PACKAGES += android.hardware.keymaster@4.0-service
+PRODUCT_PACKAGES += android.system.keystore2-service
+PRODUCT_PACKAGES += keystore2
+PRODUCT_PACKAGES += keymaster
+
 # Назначение:update_engine_sideload: Бинарник для применения OTA-обновлений через sideload в рекавери (например, через adb sideload).
 # update_engine: Основной бинарник для обработки OTA-обновлений, включая A/B-обновления.
 # update_verifier: Утилита для проверки целостности и подписи OTA-обновлений.
@@ -145,7 +150,7 @@ ENABLE_VIRTUAL_AB := true
 
 # --- Testing thinks ----
 
-TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+# TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 
 
 

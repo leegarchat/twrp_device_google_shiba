@@ -329,8 +329,8 @@ update_keys_in_file() {
 }
 
 fix_bootcontrol_and_SPL_downgrade_wipe(){
-    setprop servicemanager.ready true
-    resetprop servicemanager.ready true
+    # setprop servicemanager.ready true
+    # resetprop servicemanager.ready true
     resetprop ro.build.version.security_patch ""
 }
 
@@ -502,7 +502,7 @@ modules_touch_install
 fix_kerror7
 update_keys_in_file general_value_props;
 update_keys_in_file ${device_code}_value_prop;
-magisk_link_to_OF_FILES
-unzip_magiskboot_binary
+# magisk_link_to_OF_FILES
+# unzip_magiskboot_binary
 exit 0;
 

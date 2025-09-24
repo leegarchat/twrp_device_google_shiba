@@ -37,6 +37,10 @@ ALLOW_MISSING_DEPENDENCIES := true
 BUILD_BROKEN_USES_NETWORK := true
 # (в CORE/board_config.mk) разрешает использование сетевых функций в модулях «broken» (подсчёт времени может подсказкой). 
 # Установлен для пропуска ошибок компоновки сетевых функций в ранних этапах сборки.
+TARGET_RECOVERY_DEVICE_MODULES += strace
+RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
+
+
 
 
 # Параметры архитектуры и платформы
@@ -180,10 +184,10 @@ BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(VENDOR_CMDLINE)
 # BOARD_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.lz4
 # TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.lz4
 BOARD_KERNEL_IMAGE_NAME := Image.lz4
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtbs
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbs/dtbo.img
+# BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtbs
+# BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbs/dtbo.img
 # TARGET_NO_KERNEL_OVERRIDE := true
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+# BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 # BOARD_DTB_OFFSET         := 0x01f00000
 # (закомментированы) – альтернативные параметры, указывающие имя файла ядра и смещение DTB, но у вас не используются.
 
@@ -262,6 +266,12 @@ TW_EXTRA_LANGUAGES := true
 
 TW_EXCLUDE_DEFAULT_USB_INIT := True
 # отключает стандартные USB init скрипты TWRP, чтобы использовать свои или системы устройства
+
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_USE_FSCRYPT_POLICY := 2
+
 
 TWRP_INCLUDE_LOGCAT := true
 TW_INCLUDE_REPACKTOOLS := true

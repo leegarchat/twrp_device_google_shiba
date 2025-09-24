@@ -110,6 +110,7 @@ export OF_BIND_MOUNT_SDCARD_ON_FORMAT=1
 # Примечание: Раскомментируйте и протестируйте. Если форматирование /data проходит без ошибок, флаг можно оставить закомментированным. Если возникают проблемы с шифрованием, включите его.
 
 export OF_USE_LZ4_COMPRESSION=1
+# export OF_USE_LZMA_COMPRESSION=1
 # - set this to 1 if (for whatever reason) you want to use lz4 compression for your ramdisk;
 # - * this requires you to have an up-to-date lz4 binary in your build system, and
 # - * set this in your BoardConfig (it will be set automatically if you don't set it yourself):
@@ -245,7 +246,7 @@ export OF_USE_LEGACY_BATTERY_SERVICES=1
 # - default = 0
 
 
-export FOX_VANILLA_BUILD=0
+export FOX_VANILLA_BUILD=1
 # - Set this to 1 to make a plain build that skips all the OrangeFox (mostly MIUI-related) patches
 # - You should probably enable it for A/B devices, for non-Xiaomi devices (and for all builds for Xiaomi devices, if you are not supporting MIUI)
 # - If this is enabled, a whole lot of other variables are also enabled automatically to disable various 
