@@ -499,9 +499,20 @@ declare -A touch_modules_devices=(
 )
 modules_touch="${touch_modules_devices[$device_code]}"
 modules_touch_install
+resetprop vendor.all.modules.ready 1
+resetprop ro.vendor.build.version.sdk 36
+resetprop ro.vendor.build.security_patch 2024-05-05
+mount -t tracefs tracefs /sys/kernel/tracing
 fix_kerror7
 update_keys_in_file general_value_props;
 update_keys_in_file ${device_code}_value_prop;
+ln -s /system/bin/vndservicemanager /vendor/bin/vndservicemanager
+
+
+
+
+
+
 # magisk_link_to_OF_FILES
 # unzip_magiskboot_binary
 exit 0;

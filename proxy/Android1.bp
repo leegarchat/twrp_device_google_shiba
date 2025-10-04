@@ -1,0 +1,19 @@
+cc_binary {
+    name: "strongbox_proxy",
+    srcs: [
+        "proxy_keymint.cpp",
+        "proxy_sharedsecret.cpp",
+    ],
+    shared_libs: [
+        "libbinder_ndk",
+        "liblog",
+        "libutils",
+    ],
+    static_libs: [
+        // AIDL API из system
+        "android.hardware.security.keymint-V3-ndk",   // IKeyMintDevice
+        "android.hardware.security.sharedsecret-V1-ndk", // ISharedSecret
+    ],
+    vendor: false, // важно! сервис пойдет в system space
+    init_rc: ["strongbox_proxy.rc"],
+}

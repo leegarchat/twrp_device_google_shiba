@@ -16,25 +16,22 @@ service prepdecrypt /system/bin/bash -c /system/bin/prepdecrypt.sh
 
 on early-init
     start vendor.gatekeeper_default
-    start vendor.keymint.rust-trusty
-    start vendor.keymint-citadel
+    start vendor.citadeld
+
+on property:hwservicemanager.ready=true
+    setprop sys.boot_completed 1
 
 on init
     wait /sys/devices/platform/11210000.usb/11210000.dwc3/driver 10
     setprop sys.usb.controller "11210000.dwc3"
     setprop sys.usb.configfs 1
-    start servicemanager
-    start hwservicemanager
-    start vndservicemanager
     start vendor.boot-hal-1-2
-    start vendor.authsecret_hal_aidl
-    start vendor.drm-clearkey-service  
-    start vendor.identity_hal 
-    start vendor.oemlock_hal_aidl 
-    start vendor.keymint.rust-trusty 
-    start vendor.weaver_hal_aidl 
-    start vendor.citadeld 
-    start edgetpu_vendor_service 
+    stop vendor.keymint.rust-trusty
+    stop vendor.keymint-citadel
+    stop keystore2
+    start vendor.keymint.rust-trusty
+    start vendor.keymint-citadel
+    start keystore2
 
 on property:ro.crypto.state=encrypted
     start prepdecrypt

@@ -1,9 +1,10 @@
 
 
 service vendor.keymint-citadel /vendor/bin/hw/android.hardware.security.keymint-service.citadel
-    class early_hal
+    class hal
     user root
     group root drmrp
     # interface aidl android.hardware.security.keymint.IKeyMintDevice/strongbox
+    interface aidl android.hardware.security.keymint.IKeyMintDevice/strongbox
     interface aidl android.hardware.security.sharedsecret.ISharedSecret/strongbox
-    seclabel u:r:citadel_keymint_service:s0
+    seclabel u:r:recovery:s0

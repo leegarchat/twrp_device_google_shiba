@@ -9,6 +9,7 @@ soong_namespace {
 	imports: [
 		"device/google/shiba/pixel-source/conf",
 		"device/google/shiba/pixel-source/bootctrl/1.2",
+		// "device/google/shiba/proxy",
 		// "device/google/shiba/pixel-source/bootctrl/aidl",
 		// "device/google/shiba/pixel-source/device_zuma/usb/usb",
 		// "device/google/shiba/pixel-source/hardware_google_pixel/pixelstats",

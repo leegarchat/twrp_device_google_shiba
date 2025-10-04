@@ -20,8 +20,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=shiba
 
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
-PLATFORM_VERSION := 99.87.36
-PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
+PLATFORM_VERSION := 14
+PLATFORM_VERSION_LAST_STABLE := 14
 
 PRODUCT_SHIPPING_API_LEVEL := 34
 PRODUCT_TARGET_VNDK_VERSION := 34
@@ -30,6 +30,11 @@ TARGET_VNDK_VERSION := 34
 # PRODUCT_TARGET_VNDK_VERSION / TARGET_VNDK_VERSION: Задают версию Vendor Native Development Kit (VNDK), используемую для совместимости vendor модулей.
 # Необходимость: Обязательно для согласованности с Android 14 и VINTF.
 # Примечание: Для Pixel 8 эти значения корректны, так как устройство работает на Android 14.
+
+# Keymaster
+
+
+
 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Назначение: Включает поддержку динамических разделов, которые используются в современных устройствах Android, таких как Pixel 8, для гибкого управления разделами (system, vendor, product).
@@ -53,6 +58,17 @@ PRODUCT_PACKAGES += e2fsck.vendor_ramdisk                #
 PRODUCT_PACKAGES += update_engine
 PRODUCT_PACKAGES += update_engine_sideload
 PRODUCT_PACKAGES += update_verifier
+
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1 \
+    android.hardware.keymaster@4.0 \
+    android.hardware.keymaster@3.0
+
+# Keymint
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint-V1-ndk_platform \
+    android.hardware.security.secureclock-V1-ndk_platform \
+    android.hardware.security.sharedsecret-V1-ndk_platform
 
 PRODUCT_PACKAGES += android.hardware.keymaster@4.0-service
 PRODUCT_PACKAGES += android.system.keystore2-service
